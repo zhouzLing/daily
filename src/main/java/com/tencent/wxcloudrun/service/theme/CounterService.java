@@ -1,4 +1,4 @@
-package com.tencent.wxcloudrun.service;
+package com.tencent.wxcloudrun.service.theme;
 
 import com.tencent.wxcloudrun.model.Counter;
 

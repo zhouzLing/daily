@@ -15,4 +15,8 @@
        SELECT * FROM theme_diary where user_id = #{userId} ;
     </select>
 
+    <insert id="saveTheme">
+        insert into theme_diary(user_id,title,content,create_time,update_time) values(#{userId},#{title},#{content},now(),now())
+    </insert>
+
 </mapper>

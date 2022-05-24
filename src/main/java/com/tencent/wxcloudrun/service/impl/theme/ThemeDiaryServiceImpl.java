@@ -19,4 +19,9 @@ public class ThemeDiaryServiceImpl implements ThemeDiaryService {
     public List<ThemeDiary> getThemeList(Long userId) {
         return themeDiaryMapper.getThemeDiaryList(userId);
     }
+
+    @Override
+    public void saveTheme(ThemeDiary themeDiary) {
+        themeDiaryMapper.saveTheme(themeDiary);
+    }
 }

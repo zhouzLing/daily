@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.wxcloudrun.dao.theme.UserMapper">
+
+    <resultMap id="userMapper" type="com.tencent.wxcloudrun.model.AppUser">
+        <id property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="avatarUrl" column="avatar_url"/>
+        <result property="createTime" column="create_time" javaType="java.util.Date" />
+        <result property="updateTime" column="update_time" javaType="java.util.Date"  />
+    </resultMap>
+
+    <select id="getUserInfo" resultMap="userMapper" parameterType="java.lang.String">
+       SELECT * FROM app_user where nick_name = #{nickName} ;
+    </select>
+
+    <insert id="saveUser" >
+        insert  into  app_user(nick_name,avatar_url,create_time,update_time) values(#{nickName},#{avatarUrl},now(),now());
+    </insert>
+</mapper>

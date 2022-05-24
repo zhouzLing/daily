@@ -14,4 +14,10 @@ public interface ThemeDiaryService {
      * @return 返回所有信息列表
      */
     List<ThemeDiary> getThemeList(Long userId);
+
+    /**
+     * 新增日记
+     * @param themeDiary 日记内容
+     */
+    void saveTheme(ThemeDiary themeDiary);
 }

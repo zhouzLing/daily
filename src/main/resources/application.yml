@@ -15,4 +15,4 @@ spring:
       prefix: /
 
 mybatis:
-  mapper-locations: classpath*:mapper/*Mapper.xml
+  mapper-locations: classpath*:mapper/**/*Mapper.xml

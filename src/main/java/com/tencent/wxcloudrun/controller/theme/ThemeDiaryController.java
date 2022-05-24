@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class ThemeDiaryController {
     private ThemeDiaryServiceImpl themeDiaryService;
 
     @GetMapping(value = "/theme/list")
-    public ApiResponse getThemeList(Long userId){
+    public ApiResponse getThemeList(@RequestParam("userId") Long userId){
         List<ThemeDiary> themeDiaries = themeDiaryService.getThemeList(userId);
         return  ApiResponse.ok(themeDiaries);
     }

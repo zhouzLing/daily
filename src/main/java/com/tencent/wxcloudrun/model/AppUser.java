@@ -8,6 +8,7 @@ import java.util.Date;
 
 /**
  * @author zhouzl
+ * 用户表
  */
 @Data
 public class AppUser implements Serializable {
